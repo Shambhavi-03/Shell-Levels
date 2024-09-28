@@ -1,8 +1,4 @@
-# KDL Shell
 
-## Overview
-
-KDL Shell is a simple command-line interface that simulates basic shell functionalities. It progressively implements various levels of features that enhance user interaction and command execution. Below are the detailed descriptions of each level and their functionalities.
 
 ## Levels
 
@@ -52,10 +48,3 @@ KDL Shell is a simple command-line interface that simulates basic shell function
 - Each command separated by a `|` is spawned as its own child process. The shell can handle more than one pipe.
 - The shell creates a unidirectional pipe (see `man 2 pipe`) for each `|` and redirects the `stdout` from the left command to the writing end of the pipe and redirects the `stdin` of the right command to the reading end of the pipe.
 - Any file redirections specified by the user take precedence over any implied redirections of the `|`.
-
-## Execution Instructions
-
-### How to Execute the C Code
-1. Compile the C code using a C compiler (e.g., `gcc`):
-   ```bash
-   gcc -o kdl_shell kdl_shell.c
