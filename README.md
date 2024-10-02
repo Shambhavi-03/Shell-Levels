@@ -48,3 +48,61 @@
 - Each command separated by a `|` is spawned as its own child process. The shell can handle more than one pipe.
 - The shell creates a unidirectional pipe (see `man 2 pipe`) for each `|` and redirects the `stdout` from the left command to the writing end of the pipe and redirects the `stdin` of the right command to the reading end of the pipe.
 - Any file redirections specified by the user take precedence over any implied redirections of the `|`.
+
+## How to Execute
+
+### Level 0:
+1. Open your terminal or PowerShell.
+2. Navigate to the directory where your shell levels are stored.
+    ```bash
+    cd path/to/your/shell_levels
+    ```
+3. To compile the shell for level 0:
+    ```bash
+    g++ lvl_0.c -o lvl_0
+    ```
+4. Execute the shell:
+    ```bash
+    ./lvl_0
+    ```
+5. You should see a prompt similar to:
+    ```
+    /your/current/directory$
+    ```
+
+### Level 1:
+1. Compile the shell for level 1:
+    ```bash
+    g++ lvl_1.c -o lvl_1
+    ```
+2. Execute the shell:
+    ```bash
+    ./lvl_1
+    ```
+3. The shell will display the current directory in the prompt. It will keep reading user input until you press `Ctrl+D` (EOF).
+
+### General Steps for Other Levels:
+1. To compile any other level, replace `lvl_X.c` with the appropriate level number:
+    ```bash
+    g++ lvl_X.c -o lvl_X
+    ```
+2. Run the executable:
+    ```bash
+    ./lvl_X
+    ```
+3. The shell will behave according to the functionality of that level.
+4. Continue this process for each subsequent level by compiling the respective `lvl_X.c` file and running the executable.
+
+For example:
+- Compile and execute for level 2:
+    ```bash
+    g++ lvl_2.c -o lvl_2
+    ./lvl_2
+    ```
+
+### Cleaning Up:
+- To remove any compiled executables:
+    ```bash
+    rm lvl_*
+    ```
+
